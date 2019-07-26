@@ -71,7 +71,10 @@ public class DeviceIdentifierTests {
                 "RES_1440×2560", ScreenSize.BIG_SCREEN_SIZE,
                 "Samsung", Camera.FRONT_CAMERA, Camera.BACK_CAMERA,
                 true, PhoneType.SMART_PHONE), GalaxyS10Plus.class.getSimpleName());
-
+        //[MOBILE_PHONE, FRONT_CAMERA, ANDROID, SMART_PHONE, BACK_CAMERA, Samsung, GYROSCOPE, BIG_SCREEN_SIZE, RES_1440×2560]
+        Assert.assertEquals(galaxyS10Plus.getFeatures().size(), 9);
+        galaxyS10Plus.removeFeature(galaxyS10Plus.getFeaturesMap(), "FrontCamera");
+        Assert.assertEquals(galaxyS10Plus.getFeatures().size(), 8);
 
     }
 
