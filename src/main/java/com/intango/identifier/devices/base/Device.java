@@ -31,7 +31,10 @@ public abstract class Device {
 
     @NotNull
     public void updateFeature(Map<String, String> featuresMap, String featureKey, String featureValue) throws Exception {
-        featuresMap.put(featureKey, featureValue);
+        if (!featuresMap.containsKey(featureKey)) {
+            throw new IllegalArgumentException(featureKey + " does not exist in device!");
+        }
+        featuresMap.remove(featureKey);
     }
 
     @NotNull
