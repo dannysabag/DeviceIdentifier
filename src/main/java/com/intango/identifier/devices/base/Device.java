@@ -34,7 +34,7 @@ public abstract class Device {
         if (!featuresMap.containsKey(featureKey)) {
             throw new IllegalArgumentException(featureKey + " does not exist in device!");
         }
-        featuresMap.remove(featureKey);
+        featuresMap.put(featureKey, featureValue);
     }
 
     @NotNull
